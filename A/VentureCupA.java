@@ -1,5 +1,11 @@
 import java.util.*;
 import java.io.*;
+/**
+ * "PolandBall and Hypothesis"
+ * http://codeforces.com/contest/755/problem/A
+ * @author Ariana Herbst
+ * January 15, 2017
+ */
 public class VentureCupA {
 
     public static void main(String[] args) {
