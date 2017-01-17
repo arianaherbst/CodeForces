@@ -40,6 +40,10 @@ public class VentureCupD {
             else {
                 count += tree.getVal(i, j);
             }
+            if(sb.length() > 10000){
+                System.out.print(sb);
+                sb = new StringBuilder();
+            }
             sb.append(count + " ");
             tree.addVal(end);
             start = end;
