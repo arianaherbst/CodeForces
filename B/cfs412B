@@ -1,0 +1,100 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.util.StringTokenizer;
+/**
+ * Codeforces Round 412 Problem B: T Shirt Hunt
+ * http://codeforces.com/contest/807/problem/B
+ * Brute Force
+ * @author Ariana Herbst
+ * 5/7/17
+ */
+public class cfs412B {
+
+	public static void main(String[] args) {
+		FastScanner sc = new FastScanner();
+		int P = sc.nextInt();
+		int X = sc.nextInt();
+		int Y = sc.nextInt();
+		for (int y = X - (((X - Y) / 50) * 50); ; y+= 50) {
+			int i = (y / 50) % 475;
+			for (int k = 0; k < 25; k++) {
+				i = (i * 96 + 42) % 475;
+				if (i + 26 == P) {
+					//print answer
+					if (y <= X) {
+						System.out.println(0);
+					} else {
+						System.out.println((int)Math.ceil((y - X) / 100.0));
+					}
+					System.exit(0);
+				}
+			}
+			
+		}
+
+	}
+	public static class FastScanner {
+		BufferedReader br;
+		StringTokenizer st;
+
+		public FastScanner(Reader in) {
+			br = new BufferedReader(in);
+		}
+
+		public FastScanner() {
+			this(new InputStreamReader(System.in));
+		}
+
+		String next() {
+			while (st == null || !st.hasMoreElements()) {
+				try {
+					st = new StringTokenizer(br.readLine());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			return st.nextToken();
+		}
+
+		int nextInt() {
+			return Integer.parseInt(next());
+		}
+
+		long nextLong() {
+			return Long.parseLong(next());
+		}
+
+		double nextDouble() {
+			return Double.parseDouble(next());
+		}
+
+		String readNextLine() {
+			String str = "";
+			try {
+				str = br.readLine();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			return str;
+		}
+
+		int[] readIntArray(int n) {
+			int[] a = new int[n];
+			for (int idx = 0; idx < n; idx++) {
+				a[idx] = nextInt();
+			}
+			return a;
+		}
+
+		long[] readLongArray(int n) {
+			long[] a = new long[n];
+			for (int idx = 0; idx < n; idx++) {
+				a[idx] = nextLong();
+			}
+			return a;
+		}
+	}
+
+}
