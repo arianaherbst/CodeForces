@@ -9,6 +9,7 @@ import java.util.StringTokenizer;
  * http://codeforces.com/contest/807/problem/C
  * Binary Search, Math
  * @author Ariana Herbst
+ * 5/7/17
  */
 public class cfs412C {
 
